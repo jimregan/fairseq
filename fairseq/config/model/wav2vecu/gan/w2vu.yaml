@@ -15,7 +15,7 @@ checkpoint:
   save_dir: .
 
 task:
-  _name: unpaired_audio_text
+  _name: gan_audio_pretraining_feats
   data: ???
   text_data: ???
   labels: phn
