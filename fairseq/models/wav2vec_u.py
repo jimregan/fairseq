@@ -289,9 +289,6 @@ class Generator(nn.Module):
         self.output_dim = output_dim
         self.stride = cfg.generator_stride
         self.dropout = nn.Dropout(cfg.generator_dropout)
-        self.zero_pretrain_updates = 0
-        self.exponential_code_pen = False
-        self.dynamic_step_thresh = 0
 
         padding = cfg.generator_kernel // 2
         self.proj = nn.Sequential(
@@ -434,6 +431,10 @@ class Wav2vec_U(BaseFairseqModel):
         self.blank_mode = cfg.blank_mode
         self.blank_index = target_dict.index("<SIL>") if cfg.blank_is_sil else 0
         assert self.blank_index != target_dict.unk()
+
+        self.zero_pretrain_updates = 0
+        self.exponential_code_pen = False
+        self.dynamic_step_thresh = 0
 
         self.discriminator = Discriminator(output_size, cfg)
         for p in self.discriminator.parameters():
