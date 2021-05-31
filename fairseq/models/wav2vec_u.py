@@ -16,7 +16,8 @@ from torch import autograd
 
 from fairseq import checkpoint_utils, utils
 from fairseq.dataclass import FairseqDataclass
-from .fairseq_model import BaseFairseqModel, register_model
+from .fairseq_model import BaseFairseqModel
+from fairseq.models import register_model
 from fairseq.modules import (
     SamePad,
     TransposeLast,
