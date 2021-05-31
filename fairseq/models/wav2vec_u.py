@@ -289,6 +289,9 @@ class Generator(nn.Module):
         self.output_dim = output_dim
         self.stride = cfg.generator_stride
         self.dropout = nn.Dropout(cfg.generator_dropout)
+        self.zero_pretrain_updates = 0
+        self.exponential_code_pen = False
+        self.dynamic_step_thresh = 0
 
         padding = cfg.generator_kernel // 2
         self.proj = nn.Sequential(
