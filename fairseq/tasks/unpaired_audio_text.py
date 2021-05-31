@@ -25,7 +25,7 @@ from fairseq.dataclass import FairseqDataclass
 from fairseq.distributed.utils import get_data_parallel_world_size
 from omegaconf import MISSING
 
-from fairseq.fairseq_examples.speech_recognition.kaldi.kaldi_decoder import (
+from fairseq.examples.speech_recognition.kaldi.kaldi_decoder import (
     KaldiDecoder,
     KaldiDecoderConfig,
 )
