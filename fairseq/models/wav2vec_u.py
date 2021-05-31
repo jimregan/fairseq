@@ -432,7 +432,7 @@ class Wav2vec_U(BaseFairseqModel):
         self.blank_index = target_dict.index("<SIL>") if cfg.blank_is_sil else 0
         assert self.blank_index != target_dict.unk()
 
-        self.discriminator = self.Discriminator(output_size, cfg)
+        self.discriminator = Discriminator(output_size, cfg)
         for p in self.discriminator.parameters():
             p.param_group = "discriminator"
 
