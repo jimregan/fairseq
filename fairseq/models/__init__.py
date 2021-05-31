@@ -25,7 +25,7 @@ from .fairseq_model import (
     FairseqModel,
     FairseqMultiModel,
 )
-
+from .wav2vec_u import Wav2vec_U
 
 MODEL_REGISTRY = {}
 MODEL_DATACLASS_REGISTRY = {}
@@ -47,6 +47,7 @@ __all__ = [
     "FairseqLanguageModel",
     "FairseqModel",
     "FairseqMultiModel",
+    "Wav2vec_U",
 ]
 
 
