@@ -441,7 +441,7 @@ class Wav2vec_U(BaseFairseqModel):
 
         self.segmenter = SEGMENT_FACTORY[cfg.segmentation.type](cfg.segmentation)
 
-        self.generator = self.Generator(
+        self.generator = Generator(
             d, output_size, cfg, lambda x: self.normalize(x)[0]
         )
 
