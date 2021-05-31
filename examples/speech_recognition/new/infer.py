@@ -17,11 +17,11 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import editdistance
 import torch
 import torch.distributed as dist
-from examples.speech_recognition.new.decoders.decoder_config import (
+from fairseq.examples.speech_recognition.new.decoders.decoder_config import (
     DecoderConfig,
     FlashlightDecoderConfig,
 )
-from examples.speech_recognition.new.decoders.decoder import Decoder
+from fairseq.examples.speech_recognition.new.decoders.decoder import Decoder
 from fairseq import checkpoint_utils, distributed_utils, progress_bar, tasks, utils
 from fairseq.data.data_utils import post_process
 from fairseq.dataclass.configs import (

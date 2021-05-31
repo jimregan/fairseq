@@ -9,8 +9,8 @@ import re
 import sys
 
 import torch
-from examples.speech_recognition.data import AsrDataset
-from examples.speech_recognition.data.replabels import replabel_symbol
+from fairseq.examples.speech_recognition.data import AsrDataset
+from fairseq.examples.speech_recognition.data.replabels import replabel_symbol
 from fairseq.data import Dictionary
 from fairseq.tasks import LegacyFairseqTask, register_task
 
@@ -126,15 +126,15 @@ class SpeechRecognitionTask(LegacyFairseqTask):
     def build_generator(self, models, args, **unused):
         w2l_decoder = getattr(args, "w2l_decoder", None)
         if w2l_decoder == "viterbi":
-            from examples.speech_recognition.w2l_decoder import W2lViterbiDecoder
+            from fairseq.examples.speech_recognition.w2l_decoder import W2lViterbiDecoder
 
             return W2lViterbiDecoder(args, self.target_dictionary)
         elif w2l_decoder == "kenlm":
-            from examples.speech_recognition.w2l_decoder import W2lKenLMDecoder
+            from fairseq.examples.speech_recognition.w2l_decoder import W2lKenLMDecoder
 
             return W2lKenLMDecoder(args, self.target_dictionary)
         elif w2l_decoder == "fairseqlm":
-            from examples.speech_recognition.w2l_decoder import W2lFairseqLMDecoder
+            from fairseq.examples.speech_recognition.w2l_decoder import W2lFairseqLMDecoder
 
             return W2lFairseqLMDecoder(args, self.target_dictionary)
         else:
