@@ -58,6 +58,9 @@ from .multilingual.sampled_multi_dataset import SampledMultiDataset
 from .multilingual.sampled_multi_epoch_dataset import SampledMultiEpochDataset
 from .fasta_dataset import FastaDataset, EncodedFastaDataset
 
+from .extracted_features_dataset import ExtractedFeaturesDataset
+from .random_input_dataset import RandomInputDataset
+
 from .iterators import (
     CountingIterator,
     EpochBatchIterator,
@@ -125,4 +128,6 @@ __all__ = [
     "TransformEosLangPairDataset",
     "TruncateDataset",
     "TruncatedDictionary",
+    "ExtractedFeaturesDataset",
+    "RandomInputDataset",
 ]
